@@ -9,7 +9,9 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
 
-    <context:component-scan base-package="com.bangduoduo" />
+    <context:component-scan base-package="com.bangduoduo.*" >
+        <context:exclude-filter type="annotation" expression="org.bangduoduo.Controller"/>
+    </context:component-scan>
     <context:property-placeholder location="classpath:properties/{env}/jdbc.properties"/>
 
 
